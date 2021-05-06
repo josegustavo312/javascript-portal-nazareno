@@ -1,0 +1,96 @@
+<html>
+  <head>
+    <title>Painel | Solicitações</title>
+    <meta charset="ISO-8859-1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-deep_purple.min.css" /> 
+	<script defer src="recursos/mdl/material.min.js"></script>
+	
+	<script src="js/firebase.js"></script>
+	<script src="js/jquery.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="recursos/dialog-polyfill/dialog-polyfill.css" />
+    <script src="recursos/dialog-polyfill/dialog-polyfill.js"></script>
+    
+	<link rel="stylesheet" href="css/style.css"/>
+  </head>
+  <body>
+  	
+    <!-- Menu -->
+    <div class="mdl-layout mdl-js-layout  mdl-layout--fixed-header mdl-layout--fixed-tabs">
+	  <header class="mdl-layout__header">
+		<div class="mdl-layout-icon"></div>
+		<div class="mdl-layout__header-row">
+		  <span class="mdl-layout__title">Portal <i class="material-icons">chat_bubble_outline</i>
+		  </span>
+		  <div class="mdl-layout-spacer"></div>
+          	<nav class="mdl-navigation mdl-layout--large-screen-only">
+            	<a class="mdl-navigation__link" href="index.html"><i class="material-icons">home</i> Início </a>
+                <a class="mdl-navigation__link" href="solicitacoes.html"><i class="material-icons">record_voice_over</i> Solicitações </a>
+                <a class="mdl-navigation__link" href="novidades.html"><i class="material-icons">sync</i> Novidades </a>
+                <a class="mdl-navigation__link" href="eventos.html"><i class="material-icons">place</i> Eventos </a>
+		  		<a class="mdl-navigation__link" href="contatos.html"><i class="material-icons">info</i> Contatos </a>
+                <a class="mdl-navigation__link" href="" onClick="logoff()"><i class="material-icons">account_circle</i> Sair </a>
+		  </nav>
+		</div>
+        <!-- Tabs -->
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+          <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Registro</a>
+          <a href="#fixed-tab-2" class="mdl-layout__tab">Solicitação</a>
+        </div>
+	  </header>
+      
+	  <div class="mdl-layout__drawer ">
+      	<span class="mdl-layout-title">Menu</span>
+            <nav class="mdl-navigation">
+            	<a class="mdl-navigation__link" href="index.html"><i class="material-icons">home</i> Início </a>
+                <a class="mdl-navigation__link" href="solicitacoes.html"><i class="material-icons">record_voice_over</i> Solicitações </a>
+                <a class="mdl-navigation__link" href="novidades.html"><i class="material-icons">sync</i> Novidades </a>
+                <a class="mdl-navigation__link" href="eventos.html"><i class="material-icons">place</i> Eventos </a>
+                <a class="mdl-navigation__link" href="contatos.html"><i class="material-icons">info</i> Contatos </a>
+                <a class="mdl-navigation__link" href="" onClick="logoff()"><i class="material-icons">account_circle</i> Sair </a>
+            </nav>
+	  </div>
+      
+      <main class="mdl-layout__content">
+      
+      	<section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+          <div class="page-content" align="center">
+          	<!--Todo o conteúdo da tab 01-->
+            <div id="conteudoRegistros" class="conteudo">
+               <!--Lista os registros-->
+            </div>
+            <div>
+              	<button onClick="maisReg()" value="btnMais" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                 <i class="material-icons">add</i> Ver mais
+                 </button>
+			</div> 
+          </div>
+        </section>
+        
+        <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+          <div class="page-content" align="center">
+              <div id="conteudoSolicitacoes" class="conteudo">
+                  <!--Lista as solicitações-->
+              </div>
+              <div>
+                  <button onClick="maisSol()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                   <i class="material-icons">add</i> Ver mais
+                   </button>
+              </div>
+          </div>
+        </section>
+        
+        <div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+        	<div class="mdl-snackbar__text"></div>
+        	<button class="mdl-snackbar__action" type="button"></button>
+        </div>
+            
+      </main>
+      
+    </div>
+    
+	<script src="js/solicitacoes.js" charset="UTF8"></script>
+    
+  </body>
+</html>

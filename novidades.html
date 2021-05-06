@@ -1,0 +1,126 @@
+<html>
+  <head>
+    <title>Painel | Novidades</title>
+    <meta charset="ISO-8859-1">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-deep_purple.min.css" /> 
+	<script defer src="recursos/mdl/material.min.js"></script>
+	
+	<script src="js/firebase.js"></script>
+	<script src="js/jquery.min.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="recursos/dialog-polyfill/dialog-polyfill.css" />
+    <script src="recursos/dialog-polyfill/dialog-polyfill.js"></script>
+    
+	<link rel="stylesheet" href="css/style.css"/>
+  </head>
+  <body>
+    
+    <!-- Menu -->
+    <div class="mdl-layout mdl-js-layout  mdl-layout--fixed-header mdl-layout--fixed-tabs">
+	  <header class="mdl-layout__header">
+		<div class="mdl-layout-icon"></div>
+		<div class="mdl-layout__header-row">
+		  <span class="mdl-layout__title">Portal <i class="material-icons">chat_bubble_outline</i>
+		  </span>
+		  <div class="mdl-layout-spacer"></div>
+          	<nav class="mdl-navigation mdl-layout--large-screen-only">
+            	<a class="mdl-navigation__link" href="index.html"><i class="material-icons">home</i> Início </a>
+                <a class="mdl-navigation__link" href="solicitacoes.html"><i class="material-icons">record_voice_over</i> Solicitações </a>
+                <a class="mdl-navigation__link" href="novidades.html"><i class="material-icons">sync</i> Novidades </a>
+                <a class="mdl-navigation__link" href="eventos.html"><i class="material-icons">place</i> Eventos </a>
+		  		<a class="mdl-navigation__link" href="contatos.html"><i class="material-icons">info</i> Contatos </a>
+                <a class="mdl-navigation__link" href="" onClick="logoff()"><i class="material-icons">account_circle</i> Sair </a>
+		  </nav>
+		</div>
+        <!-- Tabs -->
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+          <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Cadastrar</a>
+          <a href="#fixed-tab-2" class="mdl-layout__tab">Listar</a>
+        </div>
+	  </header>
+      
+	  <div class="mdl-layout__drawer ">
+      	<span class="mdl-layout-title">Menu</span>
+            <nav class="mdl-navigation">
+            	<a class="mdl-navigation__link" href="index.html"><i class="material-icons">home</i> Início </a>
+                <a class="mdl-navigation__link" href="solicitacoes.html"><i class="material-icons">record_voice_over</i> Solicitações </a>
+                <a class="mdl-navigation__link" href="novidades.html"><i class="material-icons">sync</i> Novidades </a>
+                <a class="mdl-navigation__link" href="eventos.html"><i class="material-icons">place</i> Eventos </a>
+                <a class="mdl-navigation__link" href="contatos.html"><i class="material-icons">info</i> Contatos </a>
+                <a class="mdl-navigation__link" href="" onClick="logoff()"><i class="material-icons">account_circle</i> Sair </a>
+            </nav>
+	  </div>
+      
+      <main class="mdl-layout__content">
+      
+        <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
+          <div class="page-content" align="center">
+              <!--Todo o conteúdo da tab 01-->
+              <form>
+                  <div>
+                    <label for="image_uploads"><i class="material-icons">camera_alt</i></label>
+                    
+                    <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png" class="file">
+                  </div>
+                  <div class="preview" align="center">
+                    <!--Imagem-->
+                    <br/> Nenhuma imagem selecionada...
+                  </div>
+              </form>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label divForm">
+              	<input class="mdl-textfield__input tfCampos" type="text" id="tfTitulo" autofocus>
+   	 			<label class="mdl-textfield__label">Titulo...</label>
+              </div>
+              <br/>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label divForm">
+              	<input class="mdl-textfield__input tfCampos" type="text" id="tfData">
+   	 			<label class="mdl-textfield__label">Data e Horário...</label>
+              </div>
+              <br/>
+              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label divForm">
+              	<input class="mdl-textfield__input tfCampos" type="text" id="tfLocalidade">
+   	 			<label class="mdl-textfield__label">Local...</label>
+              </div>
+              <br/>
+              <div class="mdl-textfield mdl-js-textfield divForm">
+              	<textarea class="mdl-textfield__input tfCampos" type="text" rows= "3" id="taDescricao" style="resize: none"></textarea>
+                <label class="mdl-textfield__label" for="sample5">Descrição...</label>
+              </div>
+              <br/><br/>
+              <button id="btnSalvar" class="mdl-button mdl-js-button mdl-button--raised" onClick="uploadFile()">
+                <i class="material-icons">save</i> Salvar
+              </button>
+              <div id="loginProgresso" class="mdl-spinner mdl-spinner--single-color mdl-js-spinner is-active"></div>
+              <br/><br/>
+                            
+          </div>
+        </section>
+        <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+          <div class="page-content" align="center">
+              <!--Todo o conteúdo da tab 02-->
+              <div id="conteudoNovidades" class="conteudo">
+            	<!--Lista as novidades-->
+              </div>
+            <div>
+                <button onClick="maisPostagem()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                	<i class="material-icons">add</i> Ver mais
+                </button>
+            </div>
+          </div>
+        </section>
+        
+        <div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+        	<div class="mdl-snackbar__text"></div>
+        	<button class="mdl-snackbar__action" type="button"></button>
+        </div>
+        
+      </main>
+      
+    </div>
+    
+	<script src="js/novidades.js" charset="UTF8"></script>
+    <script src="js/file.js" charset="UTF8"></script>
+    
+  </body>
+</html>
