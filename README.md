@@ -1,6 +1,6 @@
 ## Projeto - Portal Nazareno
 
-###  :computer: Tela
+###  :desktop_computer: Tela
 
 <div align="center">
   <img alt="Tela" title="#Tela" width="100%" height="auto" src="./README/tela.png" />
@@ -9,7 +9,7 @@
 ----------
 
 ### :hammer_and_wrench: Ferramentas
-As seguintes tecnologias foram utilizadas na construção do projeto:
+As seguintes tecnologias foram utilizadas na construÃ§Ã£o do projeto:
 - HTML;
 - JavaScript;
 - CSS;
@@ -18,16 +18,16 @@ As seguintes tecnologias foram utilizadas na construção do projeto:
 
 ----------
 
-###  :gear: Funções
-- [x] Projeto de solicitação de serviços para prefeitura;
-- [x] CRUD de Solicitações;
+###  :gear: FunÃ§Ãµes
+- [x] Projeto de solicitaÃ§Ã£o de serviÃ§os para prefeitura;
+- [x] CRUD de SolicitaÃ§Ãµes;
 - [x] CRUD de Novidades;
 - [x] CRUD de Eventos.
 
 ----------
 
 ###  :eyeglasses: Autor
-José Gustavo da Silva.
+JosÃ© Gustavo da Silva.
 [
 **Linkedin**
 ](https://www.linkedin.com/in/jose-gustavo312/)
